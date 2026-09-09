@@ -1,0 +1,8 @@
+<div>
+  <h2>Mes Tâches</h2>
+  <a class="inline-block mb-4 text-blue-600 underline" routerLink="/tasks/new">+ Nouvelle tâche</a>
+  @for(task of tasks(); track $index) {
+    <app-task [tache]="task" (update)="refreshTasks()"></app-task>
+  }
+  
+</div>

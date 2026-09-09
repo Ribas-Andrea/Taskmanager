@@ -1,0 +1,17 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+  <h2>Inscription</h2>
+
+  <input type="Email" placeholder="Email" formControlName="email">
+  @if (registerForm.get ('email')?.invalid && registerForm.get('email')?.touched) {
+    <small>Format invalide</small>
+  }
+  <input type="password" placeholder="Mot de passe" formControlName="password">
+    @if (registerForm.get ('password')?.invalid && registerForm.get('password')?.touched) {
+    <small>Mot de passe trop court </small>
+  }
+
+  <small>{{error()}}</small>
+  <button>S'inscrire</button>
+
+</form>

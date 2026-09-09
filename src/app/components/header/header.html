@@ -1,0 +1,16 @@
+<header class="bg-blue-600 text-white p-4">
+  <div class="max-w-6xl mx-auto flex justify-between items-center">
+    <h1 class="text-xl font-bold">TaskManager</h1>
+    <nav>
+      <a class="mr-4" routerLink="/">Accueil</a>
+      @if (isAuthenticated()) {
+        <a class="mr-4" routerLink="/tasks">Tâches</a>
+        <button class="underline">Déconnexion</button>
+      } @else {
+        <a class="mr-4" routerLink="/login">Connexion</a>
+        <a class="mr-4" routerLink="/register">Inscription</a>
+      }
+      
+    </nav>
+  </div>
+</header>

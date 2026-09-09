@@ -1,0 +1,9 @@
+<form [formGroup]="taskForm" (ngSubmit)="editTask()">
+  <h2>Modifier une tâche</h2>
+  <input placeholder="Titre" formControlName="title">
+  @if (taskForm.get('title')?.invalid && taskForm.get('title')?.touched) {
+    <small>Ce champ est obligatoire</small>
+  }
+  <textarea placeholder="Description" formControlName="description"></textarea>
+  <button>Modifier</button>
+</form>
