@@ -5,7 +5,7 @@
       <a class="mr-4" routerLink="/">Accueil</a>
       @if (isAuthenticated()) {
         <a class="mr-4" routerLink="/tasks">Tâches</a>
-        <button class="underline">Déconnexion</button>
+        <button class="underline" (click)="logout()">Déconnexion</button>
       } @else {
         <a class="mr-4" routerLink="/login">Connexion</a>
         <a class="mr-4" routerLink="/register">Inscription</a>

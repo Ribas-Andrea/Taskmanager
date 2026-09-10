@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 
 @Component({
   imports: [RouterLink],
@@ -11,7 +11,13 @@ export class Header {
 
   public isAuthenticated = signal(false);
 
-  constructor () {
+  constructor (private router: Router) {
     this.isAuthenticated.set(localStorage.getItem('token') != null)
+  }
+
+  public logout() {
+    localStorage.removeItem('token');
+    this.isAuthenticated.set(false);
+    this.router.navigate(['/login']);
   }
 }
